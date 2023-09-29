@@ -10,6 +10,65 @@
 #define HRMR(k1,k2) &ht RSHFT k1  &ht RCTRL k2
 
 / {
+    // macros
+    macros {
+    ZMK_MACRO(name1,
+        wait-ms = <0>;
+        tap-ms  = <10>;
+        bindings = <&kp U &kp F &kp A &kp N>
+                 , <&kp N2 &kp N1 &kp N2 &kp N9>
+                 , <&kp UNDERSCORE>
+                 , <&kp Z &kp H &kp O &kp U &kp Y &kp O &kp N &kp G>;
+    )
+
+    ZMK_MACRO(name2,
+        wait-ms = <0>;
+        tap-ms  = <10>;
+        bindings = <&kp LS(W) &kp N0>
+                 , <&kp LS(L) &kp N0 &kp V &kp E>
+                 , <&kp LS(Z) &kp I>
+                 , <&kp LS(Y) &kp N0 &kp U &kp EXCL>
+                 , <&kp UNDERSCORE>
+                 , <&kp N0 &kp N5 &kp N3 &kp N2>;
+    )
+
+    ZMK_MACRO(spc1,
+        wait-ms = <0>;
+        tap-ms  = <10>;
+        bindings = <&kp LA(M) &kp N1>;
+    )
+
+    ZMK_MACRO(spc2,
+        wait-ms = <0>;
+        tap-ms  = <10>;
+        bindings = <&kp LA(M) &kp N2>;
+    )
+
+    ZMK_MACRO(spc3,
+        wait-ms = <0>;
+        tap-ms  = <10>;
+        bindings = <&kp LA(M) &kp N3>;
+    )
+
+    ZMK_MACRO(spc4,
+        wait-ms = <0>;
+        tap-ms  = <10>;
+        bindings = <&kp LA(M) &kp N4>;
+    )
+
+    ZMK_MACRO(nxt_tab,
+        wait-ms = <0>;
+        tap-ms  = <10>;
+        bindings = <&kp LC(TAB)>;
+    )
+
+    ZMK_MACRO(prv_tab,
+        wait-ms = <0>;
+        tap-ms  = <10>;
+        bindings = <&kp LC(LS(TAB))>;
+    )
+    };
+
     behaviors {
         ht: hold_tap {
             label = "hold_tap";
@@ -21,7 +80,179 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+
+        cmqus: comma_question {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_QUESTION";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp QUESTION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dtsmi: dot_semi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_SEMI";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            masked_mods = <(MOD_LSFT|MOD_RSFT)>; // don't send shift
+        };
     };
+
+
+    // combos
+    combos {
+      compatible = "zmk,combos";
+      // right hand
+      combo_esc {
+          timeout-ms = <50>;
+          key-positions = <16 17>;
+          bindings = <&kp ESC>;
+      };
+
+      combo_lgui {
+          timeout-ms = <50>;
+          key-positions = <5 6>;
+          bindings = <&kp LGUI>;
+      };
+
+      combo_fullscreen {
+          timeout-ms = <50>;
+          key-positions = <25 26>;
+          bindings = <&kp F11>;
+      };
+
+      combo_wkspc_up {
+          timeout-ms = <50>;
+          key-positions = <9 19>;
+          bindings = <&kp LC(UP)>;
+      };
+
+      combo_wkspc_down {
+          timeout-ms = <50>;
+          key-positions = <19 29>;
+          bindings = <&kp LC(DOWN)>;
+      };
+
+      combo_win_up {
+          timeout-ms = <50>;
+          key-positions = <7 8>;
+          bindings = <&kp LS(LG(UP))>;
+      };
+
+      combo_win_down {
+          timeout-ms = <50>;
+          key-positions = <27 28>;
+          bindings = <&kp LS(LG(DOWN))>;
+      };
+
+      combo_win_left {
+          timeout-ms = <50>;
+          key-positions = <17 18>;
+          bindings = <&kp LS(LG(LEFT))>;
+      };
+
+      combo_win_right {
+          timeout-ms = <50>;
+          key-positions = <9 18>;
+          bindings = <&kp LS(LG(RIGHT))>;
+      };
+
+      combo_rdelete {
+          timeout-ms = <50>;
+          key-positions = <15 16>;
+          bindings = <&kp DELETE>;
+      };
+
+      // left hand
+      combo_zoomin {
+          timeout-ms = <50>;
+          key-positions = <3 4>;
+          bindings = <&kp LC(PLUS)>;
+      };
+
+      combo_zoomout {
+          timeout-ms = <50>;
+          key-positions = <23 24>;
+          bindings = <&kp LC(MINUS)>;
+      };
+
+      combo_pgdn {
+          timeout-ms = <50>;
+          key-positions = <22 23>;
+          bindings = <&kp PG_DN>;
+      };
+
+      combo_pgup {
+          timeout-ms = <50>;
+          key-positions = <2 3>;
+          bindings = <&kp PG_UP>;
+      };
+
+      combo_ldelete {
+          timeout-ms = <50>;
+          key-positions = <13 14>;
+          bindings = <&kp DELETE>;
+      };
+
+      // symbols
+      combo_underscore {
+          timeout-ms = <50>;
+          key-positions = <11 12>;
+          bindings = <&kp UNDERSCORE>;
+      };
+
+      combo_minus {
+          timeout-ms = <50>;
+          key-positions = <12 13>;
+          bindings = <&kp MINUS>;
+      };
+
+      // others
+      combo_capswd {
+          timeout-ms = <50>;
+          key-positions = <2 7>;
+          bindings = <&caps_word>;
+      };
+
+      combo_lsym {
+          timeout-ms = <50>;
+          key-positions = <30 33>;
+          bindings = <&tog SYM>;
+      };
+
+      combo_lnum {
+          timeout-ms = <50>;
+          key-positions = <31 32>;
+          bindings = <&tog NUM>;
+      };
+
+      combo_hello {
+          timeout-ms = <50>;
+          key-positions = <30 31>;
+          bindings = <&hello>;
+      };
+
+      // output selection
+      combo_outusb {
+          timeout-ms = <50>;
+          key-positions = <4 14>;
+          bindings = <&out OUT_USB>;
+      };
+
+      combo_outble {
+          timeout-ms = <50>;
+          key-positions = <14 24>;
+          bindings = <&out OUT_BLE>;
+      };
+
+      combo_outtog {
+          timeout-ms = <50>;
+          key-positions = <4 24>;
+          bindings = <&out OUT_TOG>;
+      };
+    };
+
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -71,14 +302,14 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ESC     │  @       │  <       │  >       │  %       │   │  ^       │  ^       │  ]       │  ]       │  ~       │
+        //│  ESC     │  @       │  <       │  >       │  %       │   │  &       │  ^       │  {       │  }       │          │
             &kp ESC    &kp AT     &kp LT     &kp GT     &kp PRCNT       &kp AMPS   &kp CARET  &kp LBRC   &kp RBRC   &kp DEL 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  `       │  !       │  _       │  +       │  =       │   │  *       │  :       │  (       │  )       │  `       │
+        //│  `       │  !       │  _       │  +       │  =       │   │  *       │  :       │  (       │  )       │  '       │
            &kp GRAVE   &kp EXCL   &kp UNDER  &kp PLUS   &kp EQUAL      &kp PIPE   &kp COLON  &kp LPAR   &kp RPAR   &kp SQT 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │  /       │  *       │  \       │   │  &       │  $       │  [       │  ]       │          │
-            &trans     &trans     &kp SLASH  &kp STAR   &kp BSLH       &kp HASH   &kp DLLR  &kp LBKT    &kp RBKT   &kp DQT
+        //│  ~       │          │  /       │  *       │  \       │   │  &       │  $       │  [       │  ]       │  "       │
+            &kp TILDE  &trans     &kp SLASH  &kp STAR   &kp BSLH       &kp HASH   &kp DLLR  &kp LBKT    &kp RBKT   &kp DQT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
