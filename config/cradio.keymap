@@ -45,7 +45,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp LGUI   &mt LALT BSPC   &kp ENTER  &kp SPACE
+                                            &kp LGUI   &mt LALT BSPC   &mt RGUI RET  &mt RALT SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -53,16 +53,17 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ESC      │          │  UP      │          │          │   │          │ PAGE DN  │ PAGE UP  │ END      │          │
+        //│ ESC      │          │  UP      │          │          │   │  +       │  7       │  8       │  9       │  -       │
             &kp ESC    &none      &kp UP     &none      &kp HOME       &kp PLUS   &kp N7     &kp N8     &kp N9     &kp MINUS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ TAP      │  LEFT    │  DOWN    │  RIGHT   │          │   │          │ DOWN     │ UP       │ RIGHT    │  ;       │
+        //│ TAP      │  LEFT    │  DOWN    │  RIGHT   │          │   │  *       │  4       │  5       │  6       │  /       │
             &kp TAB    &kp LEFT   &kp DOWN   &kp RIGHT  &none          &kp ASTRK  &kp N4     &kp N5     &kp N6    &kp KP_DIVIDE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CLEAR BT │ PROFILE 0│ PROFILE 1│ PROFILE 2│          │   │          │          │          │          │          │
+        //│ CLEAR BT │ PROFILE 0│ PROFILE 1│ PROFILE 2│          │   │  =       │  1       │  2       │  3       │          │
             &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none    &kp EQUAL  &kp N1     &kp N2     &kp N3     &kp DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans        &trans     &kp N0
+                                           │          │          │   │          │  0       │ 
+                                             &trans     &trans        &trans      &kp N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -70,14 +71,14 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-            &trans     &kp LBKT   &kp LBRC   &kp RBRC   &trans         &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp TILDE
+        //│  ESC     │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
+            &kp ESC    &kp AT     &kp LT     &kp PRCNT &kp AMPS        &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp DEL 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-            &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
+           &kp GRAVE   &kp EXCL   &kp UNDER  &kp PLUS   &kp EQUAL      &kp PIPE   &kp COLON  &kp LPAR   &kp RPAR   &kp SQT 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-            &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
+            &trans     &trans     &kp SLASH  &kp STAR   &kp BSLH       &kp HASH   &kp DLLR  &kp LBKT    &kp RBKT   &kp DQT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
