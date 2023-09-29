@@ -215,12 +215,6 @@
           bindings = <&caps_word>;
       };
 
-      combo_hello {
-          timeout-ms = <50>;
-          key-positions = <30 31>;
-          bindings = <&hello>;
-      };
-
     };
 
 
