@@ -231,14 +231,14 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ESC      │          │  UP      │          │          │   │  +       │  7       │  8       │  9       │  -       │
-            &kp ESC    &none      &kp UP     &none      &kp HOME       &kp PLUS   &kp N7     &kp N8     &kp N9     &kp MINUS 
+        //│ ESC      │ HOME     │  UP      │  END     │ V UP     │   │  +       │  7       │  8       │  9       │  -       │
+            &kp ESC    &kp HOME    &kp UP     &kp END   &kp C_VOLUME_UP   &kp PLUS   &kp N7     &kp N8     &kp N9     &kp MINUS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ TAP      │  LEFT    │  DOWN    │  RIGHT   │          │   │  *       │  4       │  5       │  6       │  /       │
-            &kp TAB    &kp LEFT   &kp DOWN   &kp RIGHT  &none          &kp ASTRK  &kp N4     &kp N5     &kp N6    &kp KP_DIVIDE
+        //│ TAP      │  LEFT    │  DOWN    │  RIGHT   │ V DOWN   │   │  *       │  4       │  5       │  6       │  /       │
+            &kp TAB    &kp LEFT   &kp DOWN   &kp RIGHT  &kp C_VOLUME_DOWN  &kp ASTRK  &kp N4     &kp N5     &kp N6    &kp KP_DIVIDE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CLEAR BT │ PROFILE 0│ PROFILE 1│ PROFILE 2│          │   │  =       │  1       │  2       │  3       │          │
-            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none    &kp EQUAL  &kp N1     &kp N2     &kp N3     &kp DOT
+        //│ CLEAR BT │ PROFILE 0│ PROFILE 1│ PROFILE 2│ V MUTE   │   │  =       │  1       │  2       │  3       │          │
+            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &kp C_MUTE    &kp EQUAL  &kp N1     &kp N2     &kp N3     &kp DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │          │   │          │  0       │ 
                                              &trans     &kp BSPC       &trans      &kp N0
