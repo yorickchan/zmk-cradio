@@ -237,8 +237,8 @@
         //│ TAP      │  LEFT    │  DOWN    │  RIGHT   │ V DOWN   │   │  *       │  4       │  5       │  6       │  /       │
             &kp TAB    &kp LEFT   &kp DOWN   &kp RIGHT  &kp C_VOLUME_DOWN  &kp ASTRK  &kp N4     &kp N5     &kp N6    &kp KP_DIVIDE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CLEAR BT │ PROFILE 0│ PROFILE 1│ PROFILE 2│ V MUTE   │   │  =       │  1       │  2       │  3       │          │
-            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &kp C_MUTE    &kp EQUAL  &kp N1     &kp N2     &kp N3     &kp DOT
+        //│ Layer 3  │          |          │          │ V MUTE   │   │  =       │  1       │  2       │  3       │          │
+            &to 3      &none      &none      &none      &kp C_MUTE      &kp EQUAL  &kp N1     &kp N2     &kp N3     &kp DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │          │   │          │  0       │ 
                                              &trans     &kp BSPC       &trans      &kp N0
@@ -267,10 +267,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
+           &sys_reset  &trans     &kp g     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+          &bootloader  &trans     &to 1     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
             &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
