@@ -9,6 +9,11 @@
 #define HRML(k1,k2) &ht LCTRL k1  &ht LSHFT k2
 #define HRMR(k1,k2) &ht RSHFT k1  &ht RCTRL k2
 
+&mt {
+   flavor = "tap-preferred";
+   tapping_term_ms = <200>;
+};
+
 / {
     // macros
     macros {
