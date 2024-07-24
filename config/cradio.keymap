@@ -4,6 +4,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // Home row mods macro
 #define HRML(k1,k2) &ht LCTRL k1  &ht LSHFT k2
@@ -277,7 +278,7 @@
           &bootloader  &trans     &to 0      &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │BT_CLR_ALL│ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &trans     &trans     &bt BT_CLR_ALL &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
+          &out OUT_TOG &trans   &bt BT_CLR_ALL &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
